@@ -34,15 +34,8 @@ python setup.py install --prefix=%{_prefix} --root=%{buildroot}
 rm -rf %{buildroot}%{python_sitelib}/%{mod2nam}/tests # Don't install tests
 rm -rf %{buildroot}%{python_sitelib}/%{mod2nam}/*.exe # Remove unneeded files
 
-## tests don't work without network access
-##%if 0%{?suse_version} <= 1201
-##%check
-##python setup.py test
-##%endif
-
 %files
 %defattr(-,root,root,-)
-%doc docs/*.txt CHANGES.txt CONTRIBUTORS.txt DEVGUIDE.txt README.txt
 %{_bindir}/easy_install
 %{_bindir}/easy_install-%{py_ver}
 %{python_sitelib}/easy_install.py*
