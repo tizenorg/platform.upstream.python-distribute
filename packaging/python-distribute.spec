@@ -8,6 +8,7 @@ Summary:        Easily download, build, install, upgrade, and uninstall Python p
 License:        Python-2.0 or ZPL-2.0
 Group:          Development/Languages/Python
 Source:         http://pypi.python.org/packages/source/d/%{modname}/%{modname}-%{version}.tar.gz
+Source1001: 	python-distribute.manifest
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  python-devel
 Provides:       python-setuptools = %{version}
@@ -23,6 +24,7 @@ with Python module distributions.
 
 %prep
 %setup -q -n %{modname}-%{version}
+cp %{SOURCE1001} .
 rm -f %{modname}.egg-info/*.orig
 chmod -x {.,docs}/*.txt # Fix executable bits for documentation
 
@@ -35,6 +37,7 @@ rm -rf %{buildroot}%{python_sitelib}/%{mod2nam}/tests # Don't install tests
 rm -rf %{buildroot}%{python_sitelib}/%{mod2nam}/*.exe # Remove unneeded files
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_bindir}/easy_install
 %{_bindir}/easy_install-%{py_ver}
