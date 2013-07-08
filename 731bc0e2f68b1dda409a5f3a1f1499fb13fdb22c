@@ -1,0 +1,8 @@
+Change-Id: I731bc0e2f68b1dda409a5f3a1f1499fb13fdb22c
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:40:01 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4828
+Project: platform/upstream/python-distribute
+Branch: refs/heads/tizen
