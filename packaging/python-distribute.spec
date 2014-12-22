@@ -1,14 +1,14 @@
 %define modname distribute
 %define mod2nam setuptools
 Name:           python-%{modname}
-Version:        0.6.30
+Version:        0.6.32
 Release:        0
 Url:            http://packages.python.org/distribute
 Summary:        Easily download, build, install, upgrade, and uninstall Python packages
 License:        Python-2.0 or ZPL-2.0
 Group:          Development/Languages/Python
 Source:         http://pypi.python.org/packages/source/d/%{modname}/%{modname}-%{version}.tar.gz
-Source1001: 	python-distribute.manifest
+Source1001:     python-distribute.manifest
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  python-devel
 Provides:       python-setuptools = %{version}
@@ -49,5 +49,3 @@ rm -rf %{buildroot}%{python_sitelib}/%{mod2nam}/*.exe # Remove unneeded files
 %{python_sitelib}/site.py*
 %{python_sitelib}/%{modname}-%{version}-py%{py_ver}.egg-info/
 %{python_sitelib}/%{mod2nam}-*-py%{py_ver}.egg-info
-
-%changelog
